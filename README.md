@@ -27,7 +27,7 @@ El proyecto sigue el patrón arquitectónico estándar de ASP.NET Core MVC:
 
 ---
 
-## Requisitos previos
+## ⚙️ Requisitos previos
 
 1. El SDK de **.NET 8.0** o superior.
 2. **MySQL** local activo (Laragon, XAMPP o Workbench).
