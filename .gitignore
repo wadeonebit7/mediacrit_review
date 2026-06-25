@@ -1,0 +1,25 @@
+# ==========================================
+# Archivos y carpetas generados por compilacion
+# ==========================================
+bin/
+obj/
+
+# ==========================================
+# Configuraciones de usuario de Visual Studio
+# ==========================================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ==========================================
+# Archivos temporales de Rider o VS Code
+# ==========================================
+.idea/
+.vscode/
+
+# ==========================================
+# Archivos de publicacion (Publish)\
+# ==========================================
+*.publishsettings

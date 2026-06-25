@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MediaCritIQ</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/box-shadows.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <style>
+            body {
+                background-color: #0f172a;
+                color: #f1f5f9;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            .navbar-premium {
+                background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+                border-bottom: 2px solid #312e81;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .navbar-brand-logo {
+                font-weight: 800;
+                letter-spacing: 1px;
+                background: linear-gradient(45deg, #818cf8, #c084fc);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .nav-link-custom {
+                color: #cbd5e1 !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                border-radius: 6px;
+                padding: 8px 16px !important;
+            }
+
+             .nav-link-custom:hover {
+                    color: #fff !important;
+                    background-color: rgba(129, 140, 248, 0.15);
+                    transform: translateY(-1px);
+                }
+
+                .nav-link-custom.active {
+                    color: #818cf8 !important;
+                    background-color: rgba(129, 140, 248, 0.2);
+                }
+
+            .card, .table {
+                background-color: #1e293b !important;
+                border: 1px solid #334155 !important;
+                color: #f1f5f9 !important;
+            }
+
+                .table th {
+                    background-color: #0f172a !important;
+                    color: #818cf8 !important;
+                }
+
+        /* Agregar esto en el bloque <style> del Layout */
+        .table {
+        color: #f1f5f9 !important;
+        }
+
+        .table td, .table th {
+        color: #f1f5f9 !important;
+        background-color: transparent !important;
+        }
+
+            footer {
+                margin-top: auto;
+                background-color: #0b0f19;
+                border-top: 1px solid #1e293b;
+                color: #64748b;
+            }
+    </style>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark navbar-premium mb-3">
+            <div class="container">
+                <a class="navbar-brand navbar-brand-logo fs-3" asp-area="" asp-controller="Home" asp-action="Index">
+                    MediaCritIQ <span class="fs-5">🎬</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 ms-auto justify-content-end gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-door-fill me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" asp-area="" asp-controller="Reviews" asp-action="Index">
+                                <i class="bi bi-star-fill me-1"></i> Reviews
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" asp-area="" asp-controller="Media" asp-action="Index">
+                                <i class="bi bi-film me-1"></i> Catalog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" asp-area="" asp-controller="Users" asp-action="Index">
+                                <i class="bi bi-people-fill me-1"></i> Users
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-5 animated fadeIn">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted py-3 text-center">
+        <div class="container">
+            &copy; 2026 - <strong>MediaCritIQ</strong> - .NET Programming Class Framework & MySQL Project.
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

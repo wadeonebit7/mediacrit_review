@@ -1,0 +1,47 @@
+﻿@model Mediacrit_Review.Models.User
+
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+
+<h2>Editar Perfil de Usuario</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Username" class="control-label">Nombre de Usuario</label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label">Correo Electrónico</label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+
+
+            
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

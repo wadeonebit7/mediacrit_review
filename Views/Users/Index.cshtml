@@ -1,0 +1,45 @@
+@model IEnumerable<Mediacrit_Review.Models.User>
+
+@{
+    ViewData[index: "Title"] = "Listado de usuarios";
+}
+
+<div>
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <h2>LISTADO DE USUARIOS</h2>
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Crear nuevo Usuario
+        </a>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Usuario</th>
+                    <th>Correo Electronico</th>
+                    <th>Fecha de Registro</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            <thead>
+            <tbody>
+                @foreach (var User in Model)
+                {
+                    <tr>
+                        <td>@User.Id</td>
+                        <td>@User.Username</td>
+                        <td>@User.Email</td>
+                        <td>@User.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@User.Id">Editar</a>
+                            <form asp-action="Delete" asp-route-id="@User.Id" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

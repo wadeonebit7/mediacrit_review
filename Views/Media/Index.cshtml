@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Mediacrit_Review.Models.Media>
+
+@{
+    ViewData[index: "Title"] = "Listado de contenido";
+}
+
+<div>
+    <div>
+        <h2>LISTADO DE CONTENIDO</h2>
+        <a asp-action="Create" class="btn btn-success">+ Agregar nuevo Contenido</a>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo de pelicula</th>
+                    <th>Typo de contenido</th>
+                    <th>Autor</th>
+                    <th>Fecha de estreno</th>
+                    <th>Acciones</th>
+                </tr>
+                <thead>
+                    <tbody>
+                        @foreach (var Media in Model)
+                        {
+                            <tr>
+                                <td>@Media.Id</td>
+                                <td>@Media.Title</td>
+                                <td>@Media.Type</td>
+                                <td>@Media.Creator</td>
+                                <td>@Media.ReleaseYear</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@Media.Id">Editar</a>
+                                    <form asp-action="Delete" asp-route-id="@Media.Id" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta pelicula?');">
+                                        <button type="submit">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>

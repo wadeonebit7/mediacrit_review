@@ -1,0 +1,51 @@
+﻿@model Mediacrit_Review.Models.User /*IEnumerable<Mediacrit_Review.Models.User>*/
+
+@{
+    ViewData[index: "Title"] = "Registro de usuarios";
+}
+
+<div>
+    <div>
+        <h2>REGISTRO DE USUARIOS</h2>
+    </div>
+
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+
+
+
+            <div class="form-group mb-3">
+                <label asp-for="Username" class="control-label fw-bold"></label>
+                <input asp-for="Username" placeholder="Ingresa el nombre de usuario" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label fw-bold"></label>
+                <input asp-for="Email" type="email" placeholder="Ingresa el email del usuario" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="control-label fw-bold"></label>
+                <input asp-for="Password" type="password" placeholder="Ingresa la contraseña del usuario" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div>
+                <button type="submit" class="btn btn-primary">Registrar usuario</button>
+            </div>
+        </form>
+    </div>
+</div>
