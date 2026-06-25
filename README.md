@@ -56,12 +56,14 @@ dotnet restore
 ```
 
 ### 4. Aplicar Migraciones de la BD
+Genera automaticamente las tablas en el servidor MySQL, utiliza la herramienta Entity Framework (EF)
 
 ```bash
 dotnet ef database update
 ```
 
 ### 5. Ejecutar la aplicación
+Iniciar el servidor de desarrollo local y abrir la aplicación en el navegador:
 
 ```bash
 dotnet run
